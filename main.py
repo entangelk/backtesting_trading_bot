@@ -17,11 +17,11 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
     # 전략 활성화 설정
 STRATEGY_ENABLE = {
         'SUPERTREND': True,      # 슈퍼트렌드 전략 (체크 완료)
-        'LINE_REGRESSION': True,  # 선형회귀 전략 (체크 완료)
+        'LINE_REGRESSION': False,  # 선형회귀 전략 (체크 완료)
         'VOLUME_NORM': False,      # 볼륨 정규화 전략 (사용 안함)
         'MACD_DI_RSI': False,     # MACD-DI-RSI Slop 전략 (사용 안함)
-        'MACD_SIZE': True,       # MACD 크기 전략 (체크 완료)
-        'MACD_DIVERGENCE': True,  # MACD 다이버전스 전략 (체크 완료)
+        'MACD_SIZE': False,       # MACD 크기 전략 (체크 완료)
+        'MACD_DIVERGENCE': False,  # MACD 다이버전스 전략 (체크 완료)
     }
 
 
@@ -140,7 +140,7 @@ def main():
         global trigger_first_active, trigger_first_count, position_first_active, position_first_count, position_save
 
         # 차트 업데이트
-        if True:
+        if False:
             # 초기 차트 동기화
             last_time, server_time = chart_update(config['set_timevalue'], config['symbol'])
             last_time = last_time['timestamp']
