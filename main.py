@@ -6,22 +6,23 @@ from docs.utility.load_data import load_all_data,backtest_iterator
 from docs.utility.position_manager import Position, process_position
 from datetime import datetime, timezone, timedelta
 import time
-import sys
-import os
+
 
 from docs.backtest.run_backtest import run_backtest, create_parameter_grid, run_grid_search
 
 
 # 프로젝트 루트 디렉토리 추가
+import sys
+import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
     # 전략 활성화 설정
 STRATEGY_ENABLE = {
-        'SUPERTREND': True,      # 슈퍼트렌드 전략 (체크 완료)
-        'LINE_REGRESSION': False,  # 선형회귀 전략 (체크 완료)
+        'SUPERTREND': False,      # 슈퍼트렌드 전략 (체크 완료)
+        'LINEAR_REG': False,  # 선형회귀 전략 (체크 완료)
         'VOLUME_NORM': False,      # 볼륨 정규화 전략 (사용 안함)
         'MACD_DI_RSI': False,     # MACD-DI-RSI Slop 전략 (사용 안함)
-        'MACD_SIZE': False,       # MACD 크기 전략 (체크 완료)
-        'MACD_DIVERGENCE': False,  # MACD 다이버전스 전략 (체크 완료)
+        'MACD_SIZE': True,       # MACD 크기 전략 (체크 완료)
+        'MACD_DIVE': False,  # MACD 다이버전스 전략 (체크 완료)
     }
 
 
@@ -157,8 +158,8 @@ def main():
                 
             print(f"{config['set_timevalue']} 차트 업데이트 완료")
 
-
-        total_df = load_all_data('5m')
+        iscompony = True
+        total_df = load_all_data('5m',iscompony)
 
         # pass
 
@@ -170,9 +171,9 @@ def main():
         # 시그널 컬럼 매핑 정의
         SIGNAL_COLUMNS = {
             'SUPERTREND': 'filtered_position',
-            'LINE_REGRESSION': 'line_reg_signal',
+            'LINEAR_REG': 'line_reg_signal',
             'MACD_SIZE': 'macd_size_signal',
-            'MACD_DIVERGENCE': 'macd_dive_signal'
+            'MACD_DIVE': 'macd_dive_signal'
         }
         import numpy as np
 

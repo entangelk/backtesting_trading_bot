@@ -56,10 +56,10 @@ def cal_position(df, STG_CONFIG, STRATEGY_ENABLE):
         volume_position = None
 
         # 각 전략 실행 (활성화된 경우에만)
-        if STRATEGY_ENABLE['LINE_REGRESSION']:
+        if STRATEGY_ENABLE['LINEAR_REG']:
             df = add_line_reg_signal(df, STG_CONFIG)
 
-        if STRATEGY_ENABLE['MACD_DIVERGENCE']:
+        if STRATEGY_ENABLE['MACD_DIVE']:
             df = generate_macd_dive_signal(df, STG_CONFIG)
 
         if STRATEGY_ENABLE['MACD_DI_RSI']:

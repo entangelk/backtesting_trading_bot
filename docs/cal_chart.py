@@ -140,7 +140,7 @@ def process_chart_data(df, STG_CONFIG, STRATEGY_ENABLE):
 
 
     # STG_No2 - MACD_DIVE 전략 (MACD_DIVERGENCE)
-    if STRATEGY_ENABLE['MACD_DIVERGENCE']:
+    if STRATEGY_ENABLE['MACD_DIVE']:
         df['EMA_fast_stg2'] = ema_with_sma_init(df['close'], STG_CONFIG['MACD_DIVE']['FAST_LENGTH'])
         df['EMA_slow_stg2'] = ema_with_sma_init(df['close'], STG_CONFIG['MACD_DIVE']['SLOW_LENGTH'])
         df['macd_stg2'] = df['EMA_fast_stg2'] - df['EMA_slow_stg2']
@@ -167,7 +167,7 @@ def process_chart_data(df, STG_CONFIG, STRATEGY_ENABLE):
 
 
     # STG_No4 - LINEAR_REG 전략
-    if STRATEGY_ENABLE['LINE_REGRESSION']:
+    if STRATEGY_ENABLE['LINEAR_REG']:
 
         length = STG_CONFIG['LINEAR_REG']['LENGTH']
         

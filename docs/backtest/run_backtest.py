@@ -25,11 +25,11 @@ def run_backtest(df, TAG_TPSL, STRATEGY_ENABLE, SIGNAL_COLUMNS, initial_capital=
     # 각 전략에 맞는 명확한 태그 매핑
     strategy_tag_map = {
         'SUPERTREND': 'st',
-        'LINE_REGRESSION': 'lr',
+        'LINEAR_REG': 'lr',
         'VOLUME_NORM': 'vn',
         'MACD_DI_RSI': 'sl',
         'MACD_SIZE': 'sz',
-        'MACD_DIVERGENCE': 'dv'
+        'MACD_DIVE': 'dv'
     }
 
     strategy_tag = strategy_tag_map.get(active_strategy)
