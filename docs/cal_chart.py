@@ -200,7 +200,7 @@ def process_chart_data(df, STG_CONFIG, STRATEGY_ENABLE):
             df.loc[df.index[i], 'slope'] = slope
             df.loc[df.index[i], 'intercept'] = intercept
             df.loc[df.index[i], 'average'] = average
-            print(f"1번째 루프 {i}째 계산중")
+            # print(f"1번째 루프 {i}째 계산중")
         # 중심선 계산
         df['middle_line'] = np.nan
         for i in range(len(df)):
@@ -209,7 +209,7 @@ def process_chart_data(df, STG_CONFIG, STRATEGY_ENABLE):
                 candle_middle = (df['close'].iloc[i] + df['open'].iloc[i]) / 2
                 # 파인스크립트와 동일한 방식으로 계산
                 df.loc[df.index[i], 'middle_line'] = df['intercept'].iloc[i] + df['slope'].iloc[i] * candle_middle
-            print(f"2번째 루프 {i}째 계산중")
+            # print(f"2번째 루프 {i}째 계산중")
         
         # 표준편차 계산
         df['std_dev'] = np.nan
@@ -228,7 +228,7 @@ def process_chart_data(df, STG_CONFIG, STRATEGY_ENABLE):
                 
             std_dev = np.sqrt(sum_diff_sq / length)
             df.loc[df.index[i], 'std_dev'] = std_dev
-            print(f"3번째 루프 {i}째 계산중")
+            # print(f"3번째 루프 {i}째 계산중")
         
         # 채널 밴드 계산
         up_multiplier = STG_CONFIG['LINEAR_REG']['UPPER_MULTIPLIER']
@@ -256,7 +256,7 @@ def process_chart_data(df, STG_CONFIG, STRATEGY_ENABLE):
                     current_duration = 0
                     
             df.loc[df.index[i], 'trend_duration'] = current_duration
-            print(f"4번째 루프 {i}째 계산중")
+            # print(f"4번째 루프 {i}째 계산중")
 
 
         rsi_length = STG_CONFIG['LINEAR_REG']['RSI_LENGTH']

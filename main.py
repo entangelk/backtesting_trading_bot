@@ -18,10 +18,10 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
     # 전략 활성화 설정
 STRATEGY_ENABLE = {
         'SUPERTREND': False,      # 슈퍼트렌드 전략 (체크 완료)
-        'LINEAR_REG': False,  # 선형회귀 전략 (체크 완료)
+        'LINEAR_REG': True,  # 선형회귀 전략 (체크 완료)
         'VOLUME_NORM': False,      # 볼륨 정규화 전략 (사용 안함)
         'MACD_DI_RSI': False,     # MACD-DI-RSI Slop 전략 (사용 안함)
-        'MACD_SIZE': True,       # MACD 크기 전략 (체크 완료)
+        'MACD_SIZE': False,       # MACD 크기 전략 (체크 완료)
         'MACD_DIVE': False,  # MACD 다이버전스 전략 (체크 완료)
     }
 
@@ -158,7 +158,7 @@ def main():
                 
             print(f"{config['set_timevalue']} 차트 업데이트 완료")
 
-        iscompony = True
+        iscompony = False
         total_df = load_all_data('5m',iscompony)
 
         # pass
@@ -207,13 +207,13 @@ def main():
             'LINEAR_REG': {
                 'LENGTH': range(50, 151, 25),              # 50-150 (25단위)
                 'RSI_LENGTH': range(14, 15, 1),            # 고정값 14
-                'RSI_LOWER_BOUND': range(20, 36, 5),       # 20-35 (5단위)
-                'RSI_UPPER_BOUND': range(65, 81, 5),       # 65-80 (5단위)
+                'RSI_LOWER_BOUND': range(20, 40, 10),       # 20-35 (5단위)
+                'RSI_UPPER_BOUND': range(60, 81, 10),       # 65-80 (5단위)
                 'MIN_BOUNCE_BARS': range(2, 7, 1),         # 2-6 (1단위)
                 'UPPER_MULTIPLIER': range(3, 4, 1),        # 고정값 3
                 'LOWER_MULTIPLIER': range(3, 4, 1),        # 고정값 3
                 'MIN_SLOPE_VALUE': range(4, 11, 1),        # 4-10 (1단위)
-                'MIN_TREND_DURATION': range(30, 81, 5)     # 30-80 (5단위)
+                'MIN_TREND_DURATION': range(30, 81, 10)     # 30-80 (5단위)
             }
         }
         '''각 전략의 모든 파라미터에 대해 적절한 범위를 설정했습니다. 주석으로 각 범위의 실제 값을 표시했습니다.
