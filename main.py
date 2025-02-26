@@ -17,8 +17,8 @@ import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
     # 전략 활성화 설정
 STRATEGY_ENABLE = {
-        'SUPERTREND': False,      # 슈퍼트렌드 전략 (체크 완료)
-        'LINEAR_REG': True,  # 선형회귀 전략 (체크 완료)
+        'SUPERTREND': True,      # 슈퍼트렌드 전략 (체크 완료)
+        'LINEAR_REG': False,  # 선형회귀 전략 (체크 완료)
         'VOLUME_NORM': False,      # 볼륨 정규화 전략 (사용 안함)
         'MACD_DI_RSI': False,     # MACD-DI-RSI Slop 전략 (사용 안함)
         'MACD_SIZE': False,       # MACD 크기 전략 (체크 완료)
@@ -111,7 +111,7 @@ TIME_VALUES = {
 }
 
 TAG_TPSL = {
-    'st' : {'tp' : 700, 'sl' : 700}
+    'st' : {'tp' : 800, 'sl' : 800}
     ,'vn' : {'tp' : 800, 'sl' : 800}
     ,'lr' : {'tp' : 800, 'sl' : 800}
     ,'sl' : {'tp' : 400, 'sl' : 400}
