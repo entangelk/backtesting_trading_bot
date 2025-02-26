@@ -181,19 +181,19 @@ def main():
             'MACD_SIZE': {
                 'MACD_FAST_LENGTH': range(12, 13, 1),      # 고정값 12
                 'MACD_SLOW_LENGTH': range(17, 18, 1),      # 고정값 17
-                'MACD_SIGNAL_LENGTH': range(5, 100, 5),    # 5-100 (5단위)
-                'SIZE_RATIO_THRESHOLD': [round(x, 1) for x in np.arange(0.7, 1.8, 0.1)],  # 0.7-1.8 (0.1단위)
-                'DI_LENGTH': range(10, 21, 1),             # 10-20 (1단위)
-                'DI_SLOPE_LENGTH': range(7, 16, 1),        # 7-15 (1단위)
-                'MIN_SLOPE_THRESHOLD': range(12, 19, 1),   # 12-18 (1단위)
+                'MACD_SIGNAL_LENGTH': range(10, 101, 20),    # 5-100 (5단위)
+                'SIZE_RATIO_THRESHOLD': [round(x, 1) for x in np.arange(0.7, 1.8, 0.2)],  # 0.7-1.8 (0.1단위)
+                'DI_LENGTH': range(10, 21, 2),             # 10-20 (1단위)
+                'DI_SLOPE_LENGTH': range(7, 16, 2),        # 7-15 (1단위)
+                'MIN_SLOPE_THRESHOLD': range(12, 19, 2),   # 12-18 (1단위)
                 'REQUIRED_CONSECUTIVE_CANDLES': range(1, 3, 1)  # 1-2 (1단위)
             },
             'MACD_DIVE': {
-                'FAST_LENGTH': range(10, 21, 1),           # 10-20 (1단위)
-                'SLOW_LENGTH': range(21, 32, 1),           # 21-31 (1단위)
+                'FAST_LENGTH': range(10, 21, 5),           # 10-20 (1단위)
+                'SLOW_LENGTH': range(21, 32, 5),           # 21-31 (1단위)
                 'SIGNAL_LENGTH': range(10, 25, 2),         # 10-24 (2단위)
-                'HISTOGRAM_UPPER_LIMIT': range(50, 101, 10),  # 50-100 (10단위)
-                'HISTOGRAM_LOWER_LIMIT': range(-100, -49, 10),  # -100--50 (10단위)
+                'HISTOGRAM_UPPER_LIMIT': range(50, 101, 20),  # 50-100 (10단위)
+                'HISTOGRAM_LOWER_LIMIT': range(-100, -49, 20),  # -100--50 (10단위)
                 'LOOKBACK_PERIOD': range(2, 3, 1),         # 고정값 2
                 'PRICE_MOVEMENT_THRESHOLD': [round(x, 2) for x in np.arange(0.01, 0.06, 0.01)]  # 0.01-0.05 (0.01단위)
             },
