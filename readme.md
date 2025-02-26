@@ -33,3 +33,8 @@
 || LOWER_MULTIPLIER | 3 | □ 하단 밴드 승수로 매수 구간 조절 | x |
 || MIN_SLOPE_VALUE | 4-10 | □ 최소 기울기 값으로 트렌드 강도 필터링 | □ |
 || MIN_TREND_DURATION | 30-80(5) | □ 최소 트렌드 지속 기간으로 신뢰도 향상 | □ |
+
+
+현재 평균 일일 거래 수
+MACD_DIVE = 1.8 ~ 1.9 회/일
+SUPERTREND = 1.27회/일일
