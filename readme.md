@@ -37,4 +37,24 @@
 
 현재 평균 일일 거래 수
 MACD_DIVE = 1.8 ~ 1.9 회/일
-SUPERTREND = 1.27회/일일
+SUPERTREND = 1.27회/일
+
+
+테스트 결과
+
+SUPERTREND
+
+| 컬럼 | 값 |
+|------|------|
+| ATR_PERIOD | 30 |
+| ATR_MULTIPLIER | 6 |
+| ADX_LENGTH | 11 |
+| DI_DIFFERENCE_FILTER | 6 |
+| DI_DIFFERENCE_LOOKBACK_PERIOD | 4 |
+| trades_per_day | 1.68 |
+| win_rate | 57.81 |
+| total_trades | 320 |
+| wins | 185 |
+| losses | 135 |
+| final_capital | 10228525.43 |
+| profit_percentage | 2.28 |

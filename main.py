@@ -158,7 +158,7 @@ def main():
                 
             print(f"{config['set_timevalue']} 차트 업데이트 완료")
 
-        iscompony = False
+        iscompony = True
         total_df = load_all_data('5m',iscompony)
 
         # pass
