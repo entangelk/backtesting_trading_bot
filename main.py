@@ -17,8 +17,8 @@ import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
     # 전략 활성화 설정
 STRATEGY_ENABLE = {
-        'SUPERTREND': True,      # 슈퍼트렌드 전략 (체크 완료)
-        'LINEAR_REG': False,  # 선형회귀 전략 (체크 완료)
+        'SUPERTREND': False,      # 슈퍼트렌드 전략 (체크 완료)
+        'LINEAR_REG': True,  # 선형회귀 전략 (체크 완료)
         'VOLUME_NORM': False,      # 볼륨 정규화 전략 (사용 안함)
         'MACD_DI_RSI': False,     # MACD-DI-RSI Slop 전략 (사용 안함)
         'MACD_SIZE': False,       # MACD 크기 전략 (체크 완료)
@@ -159,7 +159,8 @@ def main():
             print(f"{config['set_timevalue']} 차트 업데이트 완료")
 
         iscompony = False
-        total_df = load_all_data('5m',iscompony)
+        longlong = STRATEGY_ENABLE['LINEAR_REG']
+        total_df = load_all_data('5m',iscompony,longlong)
 
         # pass
 

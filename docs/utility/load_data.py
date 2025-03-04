@@ -8,7 +8,7 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 # CSV 파일 경로 설정
 file_path = os.path.join(current_dir, "bitcoin_chart_5m_new.csv")
 
-def load_all_data(set_timevalue,iscompony):
+def load_all_data(set_timevalue,iscompony,toolong):
     if iscompony:
         df = pd.read_csv(file_path)
     else:
@@ -32,7 +32,16 @@ def load_all_data(set_timevalue,iscompony):
         chart_collection = database[collection_map[set_timevalue]]
         
         # 시간순으로 전체 데이터 가져오기
-        data_cursor = chart_collection.find().sort("timestamp", 1)
+        if toolong:
+            # 전체 문서 수 계산
+            total_count = chart_collection.count_documents({})
+            # 절반의 문서 수 계산
+            half_count = total_count // 8
+            # 데이터 가져오기 (timestamp 기준으로 정렬 후 절반만 가져옴)
+            data_cursor = chart_collection.find().sort("timestamp", 1).limit(half_count)
+            pass
+        else:
+            data_cursor = chart_collection.find().sort("timestamp", 1)
         data_list = list(data_cursor)
 
         # MongoDB 데이터를 DataFrame으로 변환
