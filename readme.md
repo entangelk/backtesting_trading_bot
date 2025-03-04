@@ -39,7 +39,7 @@
 MACD_DIVE = 1.8 ~ 1.9 회/일
 SUPERTREND = 1.27회/일
 MACD_SIZE = 1.7회 / 일
-
+LINEAR_REG = 1.68 회/일
 
 # 트레이딩 지표 테이블
 
