@@ -38,9 +38,10 @@
 현재 평균 일일 거래 수
 MACD_DIVE = 1.8 ~ 1.9 회/일
 SUPERTREND = 1.27회/일
+MACD_SIZE = 1.7회 / 일
 
 
-테스트 결과
+# 트레이딩 지표 테이블
 
 SUPERTREND
 
@@ -58,3 +59,42 @@ SUPERTREND
 | losses | 135 |
 | final_capital | 10228525.43 |
 | profit_percentage | 2.28 |
+
+MACD_DIVE
+
+| 파라미터 | 값 |
+|---------|---|
+| FAST_LENGTH |10 |
+| SLOW_LENGTH | 26|
+| SIGNAL_LENGTH | 12|
+| HISTOGRAM_UPPER_LIMIT | 50|
+| HISTOGRAM_LOWER_LIMIT | -60|
+| LOOKBACK_PERIOD |2 |
+| PRICE_MOVEMENT_THRESHOLD |0.01 |
+| trades_per_day |1.91 |
+| win_rate | 61.6|
+| total_trades | 362|
+| wins | 223|
+| losses | 139|
+| final_capital |1051763.87 |
+| profit_percentage | 5.18|
+
+MACD_SIZE
+
+| 파라미터 | 값 |
+|:--|:--|
+| MACD_FAST_LENGTH |12 |
+| MACD_SLOW_LENGTH | 17|
+| MACD_SIGNAL_LENGTH | 10|
+| SIZE_RATIO_THRESHOLD |1.1 |
+| DI_LENGTH | 18|
+| DI_SLOPE_LENGTH | 11|
+| MIN_SLOPE_THRESHOLD | 14|
+| REQUIRED_CONSECUTIVE_CANDLES |2 |
+| trades_per_day |1.89 |
+| win_rate | 58.22|
+| total_trades |359 |
+| wins | 209|
+| losses | 150|
+| final_capital |1030688.7 |
+| profit_percentage | 3.07|
